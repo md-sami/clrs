@@ -1,9 +1,15 @@
 CC=gcc
 CFLAGS=-I.
 
-insertionsort: insertionsort.o
-	$(CC) -o insertionsort insertionsort.o
+all: insertionsort selectionsort
+
+insertionsort: insertionsort.c
+	gcc -o insertionsort insertionsort.c
+
+selectionsort: selectionsort.c
+	gcc -o selectionsort selectionsort.c
 
 
 clean:
-	rm -rf insertionsort.o insertionsort
+	rm -rf insertionsort
+	rm -rf selectionsort
